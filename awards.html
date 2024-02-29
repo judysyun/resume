@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/awards.css">
+        <script>
+            function generate() {
+                return Math.floor(Math.random() * 3) + 1;
+            }
+
+            function check(num) {
+                var correct = generate();
+                if (num === correct) {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    return false;
+                }
+                else {
+                    window.alert("Better luck next time!");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 9<br>Leave it to chance<br><br></h2>
+            <p>Pick a button and hope it's the right one</p>
+            <br>
+            <div style="margin: auto; text-align: center;">
+                <button class="opt" onclick="check(1)">1</button>
+                <button class="opt" onclick="check(2)">2</button>
+                <button class="opt" onclick="check(3)">3</button>
+            </div>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Awards<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <b>Excellence Bursary for Perseverance</b>	(2022)<br>
+            McGill University, Quebec Ministry of Higher Education<br>
+            •   Excellence bursary awarded for the successful completion of the 2021-2022 academic year.<br>
+            <b>Excellence Bursary for Computer Science</b>	(2021)<br>
+            McGill University, Quebec Ministry of Higher Education<br>
+            •   Excellence bursary awarded for the successful completion of the 2020-2021 academic year.<br>
+            <br>
+            <b>Bourse d'excellence pour la persévérance</b> (2022) <br>
+            Université McGill, Ministère de l'Enseignement Supérieur <br>
+            •   Bourse d'excellence décernée pour la réussite de l'année universitaire 2021-2022. <br>
+            <b>Bourse d'excellence pour l'informatique</b> (2021)<br>
+            Université McGill, Ministère de l'Enseignement Supérieur<br>
+            •   Bourse d'excellence décernée pour la réussite de l'année universitaire 2020-2021.<br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='reward.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

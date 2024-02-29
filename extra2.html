@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/extra2.css">
+        <script>
+            let melody = ['A', 'F', 'G', 'A', 'E', 'D'];
+            let userSequence = [];
+
+            // Function to check if two arrays are equal
+            function arraysEqual(arr1, arr2) {
+                if (arr1.length !== arr2.length) return false;
+                for (let i = 0; i < arr1.length; i++) {
+                    if (arr1[i] !== arr2[i]) return false;
+                }
+                return true;
+            }
+
+            function func() {
+                if (arraysEqual(userSequence, melody)) {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    userSequence = []
+                }
+                else {
+                    window.alert("Not quite! Please try again.")
+                    userSequence = [];
+                }
+            }
+
+            function func2(note) {
+                userSequence.push(note);
+            }
+
+            function playmusic() {
+                var music = new Audio('mp3/audio.mp3');
+                music.play();
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 7<br>Playback the Melody<br><br></h2>
+            <p>Here's the catch: you won't be able to hear what you're playing.<br><br>
+            </p>
+            <button onclick="playmusic()">Hear melody</button><br><br>
+            <div class="wrap">
+                <button onclick="func2('C')" class="note">C</button>
+                <button onclick="func2('D')" class="note">D</button>
+                <button onclick="func2('E')" class="note">E</button>
+                <button onclick="func2('F')" class="note">F</button>
+                <button onclick="func2('G')" class="note">G</button>
+                <button onclick="func2('A')" class="note">A</button>
+                <button onclick="func2('B')" class="note">B</button>
+            </div>
+            <br>
+            <button onclick="func()">Submit</button>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Extracurriculars<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>Counterpoint McGill</u> - Montreal, QC - May 2023 to present<br>
+            <b>VP Graphic Design</b><br>
+            •   Designed social media content, posters for events, and Counterpoint's yearly magazine using Figma.<br>
+            •   Managed and published content for Counterpoint's website.<br>       
+            <br>
+            <u>Counterpoint McGill</u> - Montréal, QC - mai 2023 à présent<br>
+            <b>Vice-présidente de la conception graphique</b><br>
+            •   Conceptrice de contenu pour les médias sociaux, affiches pour les événements et du magazine annuel de Counterpoint à l'aide de Figma.<br>
+            •   Responsable du site Web et pour les publications sur le site Web officiel Counterpoint.<br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='extra3.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/exp2.css">
+        <script>
+            function func() {
+                let answer = document.getElementById("joke").value;
+                let vars = Math.floor(Math.random() * 2);
+
+                if (vars == 0) {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    return false;
+                }
+                else {
+                    window.alert("Not funny enough sorry, try again");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 4<br>Write a funny joke<br><br></h2>
+            <div class="quiz">
+                <form autocomplete="off">
+                    <label for="joke"><b>Write the joke below</b></label><br>
+                    <input type="text" id="joke" name="joke"><br>
+                </form>
+            </div>
+            <br>
+            <button onclick="func()"><b>Submit<b></button>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Experience<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>Zoofest & OFF JFL</u> - Montreal, QC - May 2022 to Aug 2022<br>
+            <b>Graphics and Printing Intern</b><br>
+            •   Aided communication between the Zoofest staff and Just for Laughs graphic design team.<br>
+            •   Managed communication between the Zoofest staff and external printing services.<br>
+            •   Assisted the Ticketing department at Just for Laughs by creating sales reports for the Zoofest and OFF JFL shows, in addition to fulfilling graphics and printing responsibilities.<br>
+            <br>
+            <u>Zoofest & OFF JFL</u> - Montréal, QC - mai 2022 à août 2022<br>
+            <b>Coordinatrice graphisme et impressions (stage)</b><br>
+            •   Responsable de la communication entre le personnel Zoofest et l'équipe graphisme de Juste pour rire.<br>
+            •   Gérante pour la communication entre le personnel Zoofest et les services d'impression externe.<br>
+            •   Assistante pour le département de la billetterie Just pour rire en créant des rapports de ventes pour les spectacles Zoofest et OFF JFL, en plus sur les responsabilités graphiques et impression.<br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='exp4.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

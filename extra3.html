@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/extra2.css">
+        <script>
+            function func() {
+                let answer1 = document.getElementById("i1").value;
+                let answer2 = document.getElementById("i2").value;
+                let answer3 = document.getElementById("i3").value;
+                let answer4 = document.getElementById("i4").value;
+                let answer5 = document.getElementById("i5").value;
+                if (answer1.toUpperCase() == "PIANO" && answer2.toUpperCase() == "GUITAR" && answer3.toUpperCase() == "FLUTE" && answer4.toUpperCase() == "TRUMPET" && answer5.toUpperCase() == "BAGPIPE" ) {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    return false;
+                }
+                else {
+                    window.alert("Please try again");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 8<br>Guess the instrument<br><br></h2>
+            <div id="images" style="margin: auto; text-align: center;">
+                <img src="img/i1.jpg" alt="Photo 1" style="height: 150px;">
+                <img src="img/i2.jpg" alt="Photo 2" style="height: 150px;">
+                <img src="img/i3.jpg" alt="Photo 3" style="height: 150px;">
+                <img src="img/i4.jpg" alt="Photo 4" style="height: 150px;">
+                <img src="img/i5.jpg" alt="Photo 5" style="height: 150px;">
+            </div>
+            <form  style="margin: auto; text-align: center;">
+                <input style="margin-left: 20px; margin-right: 20px" id="i1" autocomplete="off" type="text"/>
+                <input style="margin-left: 20px; margin-right: 20px" id="i2" autocomplete="off" type="text"/>
+                <input style="margin-left: 20px; margin-right: 20px" id="i3" autocomplete="off" type="text"/>
+                <input style="margin-left: 20px; margin-right: 20px" id="i4" autocomplete="off" type="text"/>
+                <input style="margin-left: 20px; margin-right: 20px" id="i5" autocomplete="off" type="text"/>
+            </form>
+            <br>
+            <button onclick="func()">Submit</button>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Extracurriculars<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>McGill Jam for Justice</u> - Montreal, QC - Jan 2021 to Dec 2022<br>
+            <b>VP Graphic Design</b><br>
+            •   Created social media content and posters for events using Figma and Procreate<br>
+            •   Helped plan various large-scale fundraising events for local charities<br>
+            <br>
+            <u>Jam pour la justice McGill</u> - Montréal, QC - jan 2021 à déc 2022<br>
+            <b>Vice-présidente graphisme</b><br>
+            •   Conceptrice d'affiches et de contenu de médias sociaux utilisant Figma et Procreate.<br>
+            •   Aide à la planification des événements de collecte de fonds pour des organismes de bienfaisance.<br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='awards.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

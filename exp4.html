@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/exp2.css">
+        <script>
+            function checkAnswer(selectedIndex) {
+            if (selectedIndex === 2) {
+                document.getElementById("p1").style.display = "none";
+                document.getElementById("p2").style.display = "block";
+                return false;
+            } else {
+                window.alert("Please try again.");
+            }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 5<br>reCAPTCHA: Judy edition<br><br></h2>
+            
+            <p>Select the photo that includes a house<br><br></p>
+            <div id="images" style="margin: auto; text-align: center;">
+                <img src="img/photo1.jpg" onclick="checkAnswer(1)" alt="Photo 1" style="height: 200px;">
+                <img src="img/photo2.jpg" onclick="checkAnswer(2)" alt="Photo 2" style="height: 200px;">
+                <img src="img/photo3.jpg" onclick="checkAnswer(3)" alt="Photo 3" style="height: 200px;">
+                <img src="img/photo4.jpg" onclick="checkAnswer(4)" alt="Photo 4" style="height: 200px;">
+            </div>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Experience<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>Habitat for Humanity PEI</u> - Charlottetown, PE - May 2021 to Aug 2021<br>
+            <b>Social Media and Design Intern</b><br>
+            •   Designed social media content using Figma and managed social media accounts for the organization.<br>
+            •   Increased online presence and engagement by over 300% on Instagram and TikTok by analyzing and following online trends.<br>
+            •   Created social media assets to improve the efficiency of designing social media content using Figma.<br>
+            <br>
+            <u>Habitat pour l'humanité Î.-P.-É.</u> - Charlottetown, PE - mai 2021 à août 2021<br>
+            <b>Coordinatrice de médias sociaux et conception (stage)</b><br>
+            •   Conceptrice du contenu des médias sociaux à l'aide de Figma et gérante des comptes médias sociaux.<br>
+            •   Responsable pour l'augmentation de la présence et de l'engagement en ligne de plus de 300% sur Instagram et Tiktok en analysant et suivant les tendances en ligne.<br>
+            •   Créatrice des motifs pour les médias sociaux à l'aide de Figma afin d'améliorer l'efficacité de la conception de contenu de médias sociaux.<br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='extra1.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

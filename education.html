@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/landing.css">
+        <script>
+            function func() {
+                let answer = document.getElementById("answer").value;
+                if (answer.toUpperCase() == "TRUE") {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    return false;
+                }
+                else {
+                    window.alert("Please try again");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 1<br>Fill in the Blank: Python Edition<br><br></h2>
+            <div class="code">
+                <pre>
+                    def atypical_resume(cool_atypical_resume, applicant):
+                        if super_cool_resume == TRUE & applicant == "Judy Yun":
+                            print("Hired!")
+                        else:
+                            print("Try again next year!")
+                        return 0
+                    
+                    def main():
+                        applicant = "Judy Yun"
+                        cool_resume = <input id="answer" autocomplete="off" type="text"/>
+
+                        atypical_resume(cool_resume, applicant)
+
+                    if __name__ == '__main__':
+                        main()
+                </pre>
+            </div>
+            <br>
+            <br>
+            <button onclick="func()"><b>Submit<b></button>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Education<br><br></h2>
+            <p style="font-weight: normal;">
+                <b>McGill University</b> - BSc <u>Computer Science</u>, minor in <u>French Language and Litterature</u><br>
+                <b>Université McGill</b> - Baccalauréat en sciences, concentration majeure en <u>informatique</u>, concentration mineure en <u>langue et littérature françaises</u>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='exp1.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

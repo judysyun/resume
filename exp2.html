@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/exp2.css">
+        <script>
+            function func() {
+                let answer1 = document.getElementById("word1").value;
+                let answer2 = document.getElementById("word2").value;
+                let answer3 = document.getElementById("word3").value;
+                let answer4 = document.getElementById("word4").value;
+                if (answer1.toUpperCase() == "MILK" && answer2.toUpperCase() == "EIGHT" && answer3.toUpperCase() == "BATHROOM" && answer4.toUpperCase() == "PLEASE") {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    return false;
+                }
+                else {
+                    window.alert("Please try again");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 3<br>Find the correct translations for the following Italian words<br><br></h2>
+            <div class="quiz">
+                A-Z characters only <br>
+                <br>
+                <form autocomplete="off">
+                    <label for="word1"><b>latte</b></label><br>
+                    <input type="text" id="word1" name="word1"><br>
+                    <label for="word2"><b>otto</b></label><br>
+                    <input type="text" id="word2" name="word2"><br>
+                    <label for="word3"><b>bagno</b></label><br>
+                    <input type="text" id="word3" name="word3"><br>
+                    <label for="word4"><b>per favore</b></label><br>
+                    <input type="text" id="word4" name="word4"><br>
+                </form>
+            </div>
+            <br>
+            <button onclick="func()"><b>Submit<b></button>
+        </div>
+        <div id = "p2" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Experience<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>ItalfestMTL</u> - Montreal, QC - May 2023 to Aug 2023<br>
+            <b>Event Logistics and Communications Intern</b><br>
+            •   Created content and managed social media platforms and the festival's website. <br>
+            •   Assisted in event logistics and event project coordination such as contacting suppliers and coordinating pick up and drop off of materials. <br>
+            •   Managed volunteers during the course of the festival. <br>
+            <br>
+            <u>ItalfestMTL</u> - Montréal, QC - mai 2023 à août 2023<br>
+            <b>Coordinatrice logistique événementiel et communications (stage)</b><br>
+            •   Responsable du contenu des médias sociaux et le site Web officiel du festival.<br>
+            •   Assistante pour toute logistique événementiel pour le festival project coordination tel que la coordination des fournisseurs. <br>
+            •   Gérante pour les bénévoles pendant le festival. <br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='exp3.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>

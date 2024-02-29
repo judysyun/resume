@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jigsaw Puzzle</title>
+        <link rel="stylesheet" href="CSS/exp1.css">
+        <script>
+            var draggedPiece = null;
+            var puzzleCreated = false;
+
+            function handleDragStart(event) {
+                draggedPiece = event.target;
+                event.dataTransfer.setData('text/plain', null);
+            }
+
+            function handleDragOver(event) {
+                event.preventDefault();
+            }
+
+            function handleDrop(event) {
+                event.preventDefault();
+                if (event.target.classList.contains('puzzle-piece')) {
+                    var targetPiece = event.target;
+                    swapPieces(draggedPiece, targetPiece);
+                }
+            }
+
+            function swapPieces(piece1, piece2) {
+                var tempBackground = piece1.style.backgroundImage;
+                piece1.style.backgroundImage = piece2.style.backgroundImage;
+                piece2.style.backgroundImage = tempBackground;
+            }
+
+            function shuffleArray(array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array;
+            }
+
+            function createPuzzle() {
+                puzzleCreated = true;
+                var container = document.getElementById("puzzle-container");
+                container.innerHTML = ""; // Clear previous puzzle
+
+                var imgWidth = 343; // Width of each image
+                var imgHeight = 469; // Height of each image
+
+                var pieces = [];
+                for (var i = 1; i <= 12; i++) {
+                    pieces.push("url('img/" + formatNumber(i) + ".png')");
+                }
+
+                shuffleArray(pieces);
+
+                // Create and append puzzle pieces
+                pieces.forEach(function(imageUrl) {
+                    var piece = document.createElement("div");
+                    piece.className = "puzzle-piece";
+                    piece.draggable = true;
+                    piece.addEventListener("dragstart", handleDragStart);
+                    piece.style.backgroundImage = imageUrl;
+                    container.appendChild(piece);
+                });
+
+                // Format number with leading zeros (e.g., 1 => 001)
+                function formatNumber(num) {
+                    return num.toString().padStart(3, '0');
+                }
+            }
+
+            function verifyPuzzle() {
+                var puzzlePieces = document.querySelectorAll('.puzzle-piece');
+                var solved = true;
+                for (var i = 0; i < puzzlePieces.length; i++) {
+                    var pieceIndex = parseInt(puzzlePieces[i].style.backgroundImage.match(/\d+/)[0]);
+                    if (pieceIndex !== i + 1) {
+                        solved = false;
+                        break;
+                    }
+                }
+                if (solved && puzzleCreated == true) {
+                    document.getElementById("p1").style.display = "none";
+                    document.getElementById("p2").style.display = "block";
+                    return false;
+                } else {
+                    window.alert("Not quite! PLease try again.");
+                }
+            }
+        </script>
+    </head>
+<body>
+    <div id="p1">
+        <div class="container">
+            <h2>Level 2<br>Jigsaw Puzzle<br><br></h2>
+            <button onclick="createPuzzle()">Start New Puzzle</button>
+            <br>
+            <div class="puzzle-container" id="puzzle-container" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                <!-- Puzzle pieces will be dynamically added here -->
+            </div>
+            <br>
+            <button onclick="verifyPuzzle()">Verify Puzzle</button>
+        </div>
+    </div>
+    <div id="p2" style="display: none">
+        <h2>Congrats! You won access to information about:<br>Judy's Experience<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>Scatterbrain Magazine</u> - Montreal, QC - July 2022 to present<br>
+            <b>Head of Event Logistics</b><br>
+            •   Supervisor of all logistics and operations for events and launch parties.<br>
+            •   Managed a team in booking venues, communication with artists and vendors, and managing all other event logistics.<br>
+            •   Evaluates current plans and processes to ameliorate operations.<br>
+            <b>Graphic Designer</b><br>
+            •   Created designs and wrote content for the printed magazine and social media.<br>
+            •   Created new and innovative designs for the magazine.<br>
+            <br>
+            <u>Scatterbrain Magazine</u> - Montréal, QC - juillet 2022 à présent<br>
+            <b>Directrice de la logistique événementiel</b><br>
+            •   Dirigeante des logistiques et d'opérations pour les événements et soirées de lancement.<br>
+            •   Responsable d'une équipe chargée de la réservation des lieux, de la coordination des artistes et des fournisseurs et de toute autre logistique administrative événementielle.<br>
+            •   Évaluateur des plans et processus actuels pour améliorer les opérations.<br>
+            <b>Graphiste</b><br>
+            •   Conceptrice pour le magazine imprimé et les médias sociaux.<br>
+            •   Créatrice de nouveaux designs innovants pour le magazine.<br> 
+            </p>
+            <br><br>
+            <button onclick="window.location.href='exp2.html';"><b>Next<b></button>
+    </div>
+</body>
+</html>

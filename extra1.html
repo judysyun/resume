@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Atypical Resume</title>
+        <link rel="stylesheet" href="CSS/extra1.css">
+        <script>
+            function func() {
+                document.getElementById("p1").style.display = "none";
+                document.getElementById("p2").style.display = "block";
+                document.body.style.background = "black";
+                document.body.style.color = "white";
+                var b = document.getElementById("button1");
+                var changeTop = Math.random() * (100 - (b.offsetHeight / window.innerHeight * 100));
+                var changeLeft = Math.random() * (100 - (b.offsetWidth / window.innerWidth * 100));
+                b.style.top = changeTop + "vh";
+                b.style.left = changeLeft + "vw";
+                return false;
+            }
+            function func2() {
+                document.getElementById("p2").style.display = "none";
+                document.getElementById("p3").style.display = "block";
+                document.body.style.background = "white";
+                document.body.style.color = "black";
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="p1">
+            <h2>Level 6<br>There's definitely nothing suspicious about that button<br><br></h2>
+            <button onclick="func()"><b>Click Me!<b></button>
+        </div>
+        <div id = "p2" style="display: none;">
+            <h2>You've been hacked !! Find the secret exit button to save yourself<br><br></h2>
+            <br><br><br><br>
+            <button id="button1" class="button1" onclick="func2()"><b>THIS IS THE BUTTON<b></button>
+        </div>
+        <div id = "p3" style="display: none">
+            <h2>Congrats! You won access to information about:<br>Judy's Extracurriculars<br><br></h2>
+            <p style="font-weight: normal; text-align: left;">
+            <u>HackMcGill (McHacks)</u> - Montreal, QC - May 2021 to present<br>
+            <b>Co-director</b><br>
+            •   Supervised Communications, Design, and Sponsorship teams during the planning of McHacks 11 for tasks which included acquiring sponsors and managing communications and social media platforms.<br>
+            •   Ensure the smooth running of HackMcGill and ensure the club abides by its constitution, by-laws and mandates.<br>
+            •   Represent the club in formal communications with McGill's student society and McGill University. <br> 
+            <b>Design Team Lead</b> - May 2022 to April 2023<br>
+            •   Created new innovative designs for McGill's 10th annual hackathon.<br>
+            •   Managed a team in executing designs for items including social media, merchandise, and website designs using Figma.<br>
+            <b>Design Coordinator</b> - May 2021 to April 2022<br>
+            •   Helped create designs for McGill's 9th annual hackathon for social media, merchandise, and website<br>        
+            <br>
+            <u>HackMcGill (McHacks)</u> - Montréal, QC - mai 2021 à présent<br>
+            <b>Co-directrice</b><br>
+            •   Responsable des équipes communications, conception, et sponsorship lors de la planification de McHacks 11 pour des tâches comprenant l'acquisition de sponsors et la gestion des plateformes de communication et de médias sociaux.<br>
+            •   Superviseur pour le bon fonctionnement de HackMcGill et responsable des activités assurannt que le club respecte sa constitution, ses règlements et ses mandats.<br>
+            •   Representant du club dans les communications formelles avec la société étudiante de McGill et l'Université McGill.<br> 
+            <b>Chef d'équipe de conception</b> - mai 2022 à avril 2023<br>
+            •   Créatrice de nouveaux designs innovants pour le 10e hackathon annuel de McGill.<br>
+            •   Responsable d'une équipe chargée d'exécuter des conceptions d'articles, notamment des médias sociaux, des marchandises et des conceptions de sites Web à l'aide de Figma.<br>
+            <b>Design Coordinator</b> - mai 2021 à avril 2022<br>
+            •   Créatrice de designs pour le 9e hackathon annuel de McGill pour les médias sociaux, site Web, etc.<br>
+            </p>
+            <br><br>
+            <button onclick="window.location.href='extra2.html';"><b>Next<b></button>
+        </div>
+    </body>
+</html>
